@@ -1,9 +1,9 @@
 name: runner
 
 on:
-  schedule:
-    - cron: '0 0 * * 1' # At 00:00 on Monday
-
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
