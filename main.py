@@ -16,11 +16,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-try:
-    BLUESKY_USERNAME = os.environ["SOME_SECRET"]
-    BLUESKY_PASSWORD = os.environ[""]
-except KeyError:
-    SOME_SECRET = "Token not available!"
+
+BLUESKY_USERNAME = os.environ["DOCKER_USERNAME"]
+BLUESKY_PASSWORD = os.environ["DOCKER_PASSWORD"]
 
 
 # Create a Bluesky client
@@ -96,7 +94,7 @@ def on_message_handler(message: firehose_models.MessageFrame) -> None:
 
 def main() -> None:
     client.login(BLUESKY_USERNAME, BLUESKY_PASSWORD)
-    print("🤖bibibop to funcionando ")
+    print("🤖bibibop to funcionando")
     firehose.start(on_message_handler)
 
 
