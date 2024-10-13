@@ -18,8 +18,7 @@ load_dotenv()
 
 # Bluesky credentials
 BLUESKY_USERNAME = "botsabedor.bsky.social"
-BLUESKY_PASSWORD = "qpqw-zv5z-j2wk-7pu4"
-
+BLUESKY_PASSWORD = f"${{ secrets.PASSWORD }}"
 # Create a Bluesky client
 client = Client("https://bsky.social")
 firehose = FirehoseSubscribeReposClient()
